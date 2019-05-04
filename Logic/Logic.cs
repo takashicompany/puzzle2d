@@ -137,9 +137,12 @@
 				{
 					continue;
 				}
+				var target = line[i].content;
+				target.OnStartTurn();
 
-				if (!line[i].content.isMove)
+				if (!line[i].content.canMove)
 				{
+					target.OnCompleteTurn();
 					continue;
 				}
 				
@@ -183,6 +186,8 @@
 						}
 					}
 				}
+
+				target.OnCompleteTurn();
 			}
 		}
 

@@ -3,7 +3,12 @@
 
 	public abstract class CellContent
 	{
-		public virtual bool isMove { get { return true; } }
+		public virtual bool canMove { get { return true; } }
+
+		public virtual void OnStartTurn()
+		{
+			
+		}
 
 		public virtual void OnCell(ICell cell)
 		{
@@ -15,9 +20,14 @@
 			return CollisionResult.Stoped;
 		}
 
+		public virtual void OnCompleteTurn()
+		{
+
+		}
+
 		public override string ToString()
 		{
-			return string.Format("[CellContent: isMove={0}]", isMove);
+			return string.Format("[CellContent: canMove={0}]", canMove);
 		}
 	}
 }
