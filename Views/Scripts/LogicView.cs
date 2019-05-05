@@ -15,13 +15,12 @@
 
 		void Awake()
 		{
-			_grid = GetComponent<GridLayoutGroup>();
 		}
 
 		public void SetLogic(ILogic logic)
 		{
 			_logic = logic;
-
+			_grid = GetComponent<GridLayoutGroup>();
 			_grid.constraintCount = _logic.width;
 
 			for (int y = _logic.height - 1; y >= 0; y--)
