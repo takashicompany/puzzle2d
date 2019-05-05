@@ -101,7 +101,7 @@
 			Move(Direction.Right);
 		}
 
-		protected virtual void Move(Direction dir)
+		public virtual void Move(Direction dir)
 		{
 			switch (dir)
 			{

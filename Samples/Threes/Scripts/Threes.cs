@@ -12,7 +12,7 @@
 
 		}
 
-		protected override void Move(p2.Direction dir)
+		public override void Move(p2.Direction dir)
 		{
 			if (isGameOver)
 			{
