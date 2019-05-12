@@ -31,8 +31,6 @@
 
 		public T_Cell[,] cells { get { return _cells; } }
 
-		private List<CellContent> _contents;
-
 		public int width { get; private set; }
 
 		public int height { get; private set; }
@@ -47,7 +45,7 @@
 			this.height = height;
 			this.moveOne = moveOne;
 
-			_cells = new T_Cell[width, height];
+			Format();
 
 			for (int y = 0; y < height; y++)
 			{
@@ -58,6 +56,11 @@
 					_cells[x, y] = cell;
 				}
 			}
+		}
+
+		public void Format()
+		{
+			_cells = new T_Cell[width, height];
 		}
 
 		public void AddContent(T_CellContent content, int x, int y)
