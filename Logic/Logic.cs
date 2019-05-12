@@ -41,11 +41,25 @@
 
 		public Logic(int width, int height, bool moveOne)
 		{
+			SetSize(width, height);
+			this.SetMoveType(moveOne);
+			Format();
+		}
+
+		public void SetSize(int width, int height)
+		{
 			this.width = width;
 			this.height = height;
-			this.moveOne = moveOne;
+		}
 
-			Format();
+		public void SetMoveType(bool isMoveOne)
+		{
+			this.moveOne = moveOne;
+		}
+
+		public void Format()
+		{
+			_cells = new T_Cell[width, height];
 
 			for (int y = 0; y < height; y++)
 			{
@@ -58,12 +72,7 @@
 			}
 		}
 
-		public void Format()
-		{
-			_cells = new T_Cell[width, height];
-		}
-
-		public void AddContent(T_CellContent content, int x, int y)
+		public virtual void AddContent(T_CellContent content, int x, int y)
 		{
 			_cells[x, y].SetContent(content);
 		}
