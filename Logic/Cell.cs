@@ -29,18 +29,18 @@
 			this.y = y;
 		}
 
-		public bool IsEmpty()
+		public virtual bool IsEmpty()
 		{
 			return content == null;
 		}
 
-		public void SetContent(T content)
+		public virtual void SetContent(T content)
 		{
 			this.content = content;
 			this.content.OnCell(this);
 		}
 
-		public void RemoveContent()
+		public virtual void RemoveContent()
 		{
 			content = null;
 		}
