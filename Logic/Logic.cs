@@ -29,7 +29,7 @@
 	{
 		protected T_Cell[,] _cells;
 
-		public T_Cell[,] cells { get { return _cells; } } 
+		public T_Cell[,] cells { get { return _cells; } }
 
 		private List<CellContent> _contents;
 
